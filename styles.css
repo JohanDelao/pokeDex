@@ -1,0 +1,135 @@
+:root{
+    --primary-color: #3C5AA6;
+    --secondary-color: #FFCB05;
+}
+body {
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+}
+/* Navigation */
+.header {
+    background-color: var(--primary-color);
+    margin: 0;
+}
+.title h1{
+    margin: 0;
+    padding: 20px 0;
+}
+.innerNav{
+    margin: 0 auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.title {
+    font-family: 'Sen', sans-serif !important;
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--secondary-color);
+}
+.title h1{
+    font-family: 'Sen', sans-serif !important;
+}
+.menuBar{
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+
+}
+.menuBar div{
+    margin-bottom: 5px;
+    height: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+.menuBar .topLine{
+    width: 50px;
+}
+.menuBar .middleLine{
+    width: 35px;
+    transition: 0s smooth width;
+    transition-delay: 200ms;
+}
+.menuBar .bottomLine{
+    width: 20px;
+    transition: 0s width;
+    transition-delay: 280ms;
+}
+.menuBar:hover div{
+    background-color: #e4b601;
+}
+.menuBar:hover .middleLine{
+    width: 50px;
+}
+.menuBar:hover .bottomLine{
+    width: 50px;
+}
+.menuBar:active .bottomLine{
+    transform: translateY(-15px);
+}
+.menuBar:active .topLine{
+    transform: translateY(15px);
+}
+.menuBar.show{
+    display: show;
+}
+.modal.dontShow{
+    display: none;
+}
+.bottomLine.clicked {
+    transform: translateY(-15px);
+    width: 50px;
+}
+.topLine.clicked {
+    transform: translateY(15px);
+}
+.modal {
+    display: show;
+    position: absolute;
+    border: var(--secondary-color) solid 4px;
+    width: 200px;
+    max-height: 300px;
+    transform: translateX(67vw) translateY(-15px);
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+.list{
+    text-align: center;
+}
+.list div{
+    font-family: 'Fira Code', monospace;
+    color: var(--secondary-color);
+    padding: 5px 0;
+}
+.list div:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+.elements{
+    cursor: pointer;
+}
+.searchSection{
+    text-align: center;
+}
+.searchDiv{
+    height: 100px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+#query, #searchButton{
+    font-family: 'Fira Code', monospace;
+}
+#searchButton{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+#searchButton:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}

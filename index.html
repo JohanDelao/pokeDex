@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKEMON APPLICATION</title>
+
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Sen:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="header">
+        <div class="innerNav">
+            <div class="title">
+                <h1>POKEDEX</h1>
+            </div>
+            <button class="menuBar clicked" id="clicked" onclick="myFunction()">
+                <div class="topLine" id="topLine"></div>
+                <div class="middleLine"></div>
+                <div class="bottomLine" id="botLine"></div>
+            </button>
+        </div>
+    </nav>
+    <section>
+        <div class="modal dontShow" id="appear">
+            <div class="list">
+                <div class="elements">Normal</div>
+                <div class="elements">Fire</div>
+                <div class="elements">Water</div>
+                <div class="elements">Grass</div>
+                <div class="elements">Electricity</div>
+                <div class="elements">Fighting</div>
+            </div>
+        </div>
+    </section>
+    <section class="searchSection">
+        <div class="searchDiv">
+            <form id="form"> 
+                <input type="search" id="query" name="q" placeholder="Search...">
+                <button id="searchButton">Search</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
+<script src="script.js" defer></script>
