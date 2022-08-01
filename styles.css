@@ -109,6 +109,7 @@ body {
 .elements{
     cursor: pointer;
 }
+/* Search Section */
 .searchSection{
     text-align: center;
 }
@@ -132,4 +133,65 @@ body {
 #searchButton:hover{
     background-color: var(--secondary-color);
     color: var(--primary-color);
+}
+/* Pokemon Data Section */
+.pokemonData {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+.card {
+    border: 2px solid var(--primary-color);
+    width: fit-content;
+    text-align: center;
+    border-radius: 10px;
+    max-height: 165px;
+    margin: 30px 40px;
+}
+.card .textCard {
+    padding: 10px;
+    text-align: center;
+    padding-top: 0;
+    width: 95px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+.card .textCard p{
+    margin: 0;
+}
+.typeOfPokemon{
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+.typeOfPokemon p{
+    border: 1px solid;
+    padding: 2px;
+    border-radius: 10px;
+    font-weight: 500;
+    color: white;
+}
+.dataPls{
+    min-height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+}
+.load{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-family: 'Sen', sans-serif;
+    border: none;
+    cursor: pointer;
+}
+.load:hover{
+    padding: 12px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 17px;
 }
