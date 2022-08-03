@@ -25,6 +25,7 @@ function myFunction() {
 }
 
 const promises = [];
+let pokemonArray;
 const fetchPokemon = () => { // arrow function since this function is not repeatable
     for (let i = 1; i <= 150; i++) {
         const URL = `https://pokeapi.co/api/v2/pokemon/${i}`; // template literal strings, can create strings by doing substitution of placeholders
@@ -39,6 +40,7 @@ const fetchPokemon = () => { // arrow function since this function is not repeat
             type: data.types.map((type) => type.type.name) // use map function to go through array and populate object.type as an array
         }))
         displayPokemon(pokemon);
+        pokemonArray = pokemon;
     })
 }
 const displayPokemon = (pokemon) => { // function that takes pokemon variable
@@ -94,5 +96,26 @@ const whichColor = (type) => {
         return 'blue'
     }
 }
-
+// Since functions are so similar, prob can find a way to simplify the process and not write a function for each type
+function displayType(type){
+    let typePokemon = [];
+    pokemonArray.forEach(function(pokemon){
+        if(pokemon.type[0] == type || pokemon.type[1] == type){
+            typePokemon.push(pokemon)
+        }
+    })
+    const content = typePokemon.map(pokemon =>
+        `<div class="card">
+        <img src="${pokemon.image}" alt="...">
+            <div class="textCard">
+                <p>${pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</p>
+                <div class="typeOfPokemon">
+                    <p style = "background: ${whichColor(pokemon.type[0])};">${pokemon.type[0]}</p>
+                    ${pokemon.type[1] ? '<p style="background:' + whichColor(pokemon.type[1]) + ';">'+ pokemon.type[1]+'</p>' : ''}
+                </div>
+            </div>
+        </div>`).join('')
+        pokeSection.innerHTML = content;
+}
 fetchPokemon() // calling the function
+console.log(pokemonArray)

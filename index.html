@@ -18,7 +18,7 @@
 <body>
     <nav class="header">
         <div class="innerNav">
-            <div class="title">
+            <div class="title" onclick="fetchPokemon()">
                 <h1>POKEDEX</h1>
             </div>
             <button class="menuBar clicked" id="clicked" onclick="myFunction()">
@@ -31,12 +31,23 @@
     <section>
         <div class="modal dontShow" id="appear">
             <div class="list">
-                <div class="elements">Normal</div>
-                <div class="elements">Fire</div>
-                <div class="elements">Water</div>
-                <div class="elements">Grass</div>
-                <div class="elements">Electricity</div>
-                <div class="elements">Fighting</div>
+                <div class="elements" onclick="displayType(`normal`)">Normal</div>
+                <div class="elements" onclick="displayType(`fire`)">Fire</div>
+                <div class="elements" onclick="displayType(`water`)">Water</div>
+                <div class="elements" onclick="displayType(`grass`)">Grass</div>
+                <div class="elements" onclick="displayType(`electric`)">Electric</div>
+                <div class="elements" onclick="displayType(`fighting`)">Fighting</div>
+                <div class="elements" onclick="displayType(`bug`)">Bug</div>
+                <div class="elements" onclick="displayType(`poison`)">Poison</div>
+                <div class="elements" onclick="displayType(`flying`)">Flying</div>
+                <div class="elements" onclick="displayType(`ground`)">Ground</div>
+                <div class="elements" onclick="displayType(`fairy`)">Fairy</div>
+                <div class="elements" onclick="displayType(`psychic`)">Psychic</div>
+                <div class="elements" onclick="displayType(`rock`)">Rock</div>
+                <div class="elements" onclick="displayType(`ghost`)">Ghost</div>
+                <div class="elements" onclick="displayType(`ice`)">Ice</div>
+                <div class="elements" onclick="displayType(`dragon`)">Dragon</div>
+                <div class="elements" onclick="displayType(`steel`)">Steel</div>
             </div>
         </div>
     </section>
