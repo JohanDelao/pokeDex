@@ -9,6 +9,10 @@ application will have the following features:
 <li>Side-Menu (With some subtle animations) that will contain the different type of Pokemon, when a type is pressed, the Pokemon of that type will display</li>
 <li>Hopefully bring childhood memories!</li>
 
-Current GIF of the progress made:
+Current GIF of the progress made (8/2/2022):
 
 <img src="https://github.com/JohanDelao/pokeDex/blob/main/pokeApplicationGIF.gif">
+
+Current GIF of the progress made (8/03/2022):
+
+<img src="https://github.com/JohanDelao/pokeDex/blob/main/updatedPokeApplication2.gif">
