@@ -18,7 +18,7 @@
 <body>
     <nav class="header">
         <div class="innerNav">
-            <div class="title" onclick="fetchPokemon()">
+            <div class="title" onclick="displayAllTypes()">
                 <h1>POKEDEX</h1>
             </div>
             <button class="menuBar clicked" id="clicked" onclick="myFunction()">
@@ -53,10 +53,10 @@
     </section>
     <section class="searchSection">
         <div class="searchDiv">
-            <form id="form"> 
-                <input type="search" id="query" name="q" placeholder="Search...">
-                <button id="searchButton">Search</button>
-            </form>
+            <div id="form"> 
+                <input type="search" id="search" pokemon-search placeholder="Type something...">
+                <button id="searchButton" onclick="search()">Search</button>
+            </div>
         </div>
     </section>
     <section class="pokemonData">

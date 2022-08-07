@@ -2,6 +2,7 @@ const menu = document.getElementById("clicked");
 const modal = document.getElementById("appear");
 const botLine = document.getElementById("botLine");
 const topLine = document.getElementById("topLine");
+const searchInput = document.querySelector("[pokemon-search]")
 
 const URL = `https://pokeapi.co/api/v2/pokemon/`; // API Link
 let newURL = "";
@@ -99,12 +100,13 @@ const whichColor = (type) => {
 // Since functions are so similar, prob can find a way to simplify the process and not write a function for each type
 function displayType(type){
     let typePokemon = [];
+    let content = ``;
     pokemonArray.forEach(function(pokemon){
         if(pokemon.type[0] == type || pokemon.type[1] == type){
             typePokemon.push(pokemon)
         }
     })
-    const content = typePokemon.map(pokemon =>
+    content = typePokemon.map(pokemon =>
         `<div class="card">
         <img src="${pokemon.image}" alt="...">
             <div class="textCard">
@@ -114,8 +116,55 @@ function displayType(type){
                     ${pokemon.type[1] ? '<p style="background:' + whichColor(pokemon.type[1]) + ';">'+ pokemon.type[1]+'</p>' : ''}
                 </div>
             </div>
-        </div>`).join('')
-        pokeSection.innerHTML = content;
+        </div>`).join('');
+    pokeSection.innerHTML = content;
+}
+
+function displayAllTypes(){
+    content = pokemonArray.sort().map(pokemon =>
+        `<div class="card">
+        <img src="${pokemon.image}" alt="...">
+            <div class="textCard">
+                <p>${pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</p>
+                <div class="typeOfPokemon">
+                    <p style = "background: ${whichColor(pokemon.type[0])};">${pokemon.type[0]}</p>
+                    ${pokemon.type[1] ? '<p style="background:' + whichColor(pokemon.type[1]) + ';">'+ pokemon.type[1]+'</p>' : ''}
+                </div>
+            </div>
+        </div>`).join('');
+    pokeSection.innerHTML = content;
+}
+/*
+Search function
+    create an empty array
+    .forEach on Pokemon array
+        if whatever is searched is in the pokemon's name -> put it into empty array
+    Display the now not empty array
+*/
+function search(){
+    // get input value
+    let value = searchInput.value;
+    let displayPokemon = [];
+    value = value.toLowerCase()
+    pokemonArray.forEach(function(pokemon){
+        let pokeName = pokemon.name;
+        if(pokeName.includes(value)){
+            displayPokemon.push(pokemon)
+        }
+    })
+    content = displayPokemon.sort().map(pokemon =>
+        `<div class="card">
+        <img src="${pokemon.image}" alt="...">
+            <div class="textCard">
+                <p>${pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</p>
+                <div class="typeOfPokemon">
+                    <p style = "background: ${whichColor(pokemon.type[0])};">${pokemon.type[0]}</p>
+                    ${pokemon.type[1] ? '<p style="background:' + whichColor(pokemon.type[1]) + ';">'+ pokemon.type[1]+'</p>' : ''}
+                </div>
+            </div>
+        </div>`).join('');
+    pokeSection.innerHTML = content;
+
 }
 fetchPokemon() // calling the function
 console.log(pokemonArray)
