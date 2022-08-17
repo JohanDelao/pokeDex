@@ -40,10 +40,12 @@ const fetchPokemon = () => { // arrow function since this function is not repeat
             // Need to get the type of Pokemon it is (Can have multiple types)
             type: data.types.map((type) => type.type.name) // use map function to go through array and populate object.type as an array
         }))
+        pokemon.sort((a, b) => a.name.localeCompare(b.name));
         displayPokemon(pokemon);
         pokemonArray = pokemon;
     })
 }
+// Function to display Pokemon
 const displayPokemon = (pokemon) => { // function that takes pokemon variable
     console.log(pokemon)
     const content = pokemon.map(pokemon =>
@@ -119,7 +121,7 @@ function displayType(type){
         </div>`).join('');
     pokeSection.innerHTML = content;
 }
-
+// Function to show all pokemon after pressing logo
 function displayAllTypes(){
     content = pokemonArray.sort().map(pokemon =>
         `<div class="card">
@@ -134,13 +136,7 @@ function displayAllTypes(){
         </div>`).join('');
     pokeSection.innerHTML = content;
 }
-/*
-Search function
-    create an empty array
-    .forEach on Pokemon array
-        if whatever is searched is in the pokemon's name -> put it into empty array
-    Display the now not empty array
-*/
+// Search function
 function search(){
     // get input value
     let value = searchInput.value;
@@ -148,7 +144,7 @@ function search(){
     value = value.toLowerCase()
     pokemonArray.forEach(function(pokemon){
         let pokeName = pokemon.name;
-        if(pokeName.includes(value)){
+        if(pokeName.startsWith(value)){
             displayPokemon.push(pokemon)
         }
     })
@@ -164,7 +160,5 @@ function search(){
             </div>
         </div>`).join('');
     pokeSection.innerHTML = content;
-
 }
-fetchPokemon() // calling the function
-console.log(pokemonArray)
+fetchPokemon() // calling the fetch function
