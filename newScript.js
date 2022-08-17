@@ -24,7 +24,6 @@ function myFunction() {
         topLine.classList.add("clicked");
     }
 }
-
 const promises = [];
 let pokemonArray;
 const fetchPokemon = () => { // arrow function since this function is not repeatable
@@ -137,14 +136,13 @@ function displayAllTypes(){
     pokeSection.innerHTML = content;
 }
 // Search function
-function search(){
+const search = debounce(text => {
     // get input value
-    let value = searchInput.value;
     let displayPokemon = [];
-    value = value.toLowerCase()
+    text = text.toLowerCase()
     pokemonArray.forEach(function(pokemon){
         let pokeName = pokemon.name;
-        if(pokeName.startsWith(value)){
+        if(pokeName.startsWith(text)){
             displayPokemon.push(pokemon)
         }
     })
@@ -160,5 +158,16 @@ function search(){
             </div>
         </div>`).join('');
     pokeSection.innerHTML = content;
+})
+searchInput.addEventListener('input', e =>{
+    let text = e.target.value;
+    search(text)
+})
+function debounce(cb, delay = 750){
+    return (...args) => {
+        setTimeout(() => {
+            cb(...args)
+        }, delay)
+    }
 }
 fetchPokemon() // calling the fetch function
