@@ -20,3 +20,7 @@ Current GIF of the progress made (8/03/2022):
 Current GIF of the progress made (8/7/2022):
 
 <img src="https://github.com/JohanDelao/pokeDex/blob/main/updatedPokeApplicationAlmostDone.gif">
+
+Current GIF of the progress made (8/17/2022):
+
+<img src="https://github.com/JohanDelao/pokeDex/blob/main/updatedPokeApplication4.gif">
