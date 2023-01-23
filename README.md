@@ -2,7 +2,7 @@
 
 Hello All Who Are Reading!
 
-This project is something that connects with my childhood as I am using the PokeAPI (found here: https://pokeapi.co/) to create a PokeDex web application! The fully-completed
+This project is something that connects with my childhood as I am using the PokeAPI (found here: https://pokeapi.co/) to create a PokeDex web application! The fully-completed. Check out the website here: https://johandelao.github.io/pokeDex/
 application will have the following features:
 <li>Display pokemon from the API, each Pokemon will display its name, picture, and type of Pokemon it is.</li>
 <li>Search functionality, in which the user can type into the search bar and whichever Pokemon's names contain that phrase it will display</li>
